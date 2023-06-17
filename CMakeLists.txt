@@ -11,6 +11,7 @@ option(MLN_WITH_OPENGL "Build with OpenGL renderer" ON)
 option(MLN_WITH_EGL "Build with EGL renderer" OFF)
 option(MLN_WITH_OSMESA "Build with OSMesa (Software) renderer" OFF)
 option(MLN_WITH_WERROR "Make all compilation warnings errors" ON)
+option(MLN_WITH_FFI "Build with FFI shim" OFF)
 
 if (MLN_WITH_CLANG_TIDY)
     find_program(CLANG_TIDY_COMMAND NAMES clang-tidy)
@@ -1111,6 +1112,10 @@ set_property(TARGET mbgl-core PROPERTY FOLDER Core)
 add_library(
     Mapbox::Map ALIAS mbgl-core
 )
+
+if(MLN_WITH_FFI)
+    add_subdirectory(ffi)
+endif()
 
 if(MLN_WITH_CORE_ONLY)
     return()

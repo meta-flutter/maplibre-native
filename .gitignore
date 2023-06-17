@@ -12,7 +12,7 @@
 /platform/android/.gradle
 /platform/android/x86
 /platform/android/x86_64
-/cmake-build-debug
+/cmake-build-*
 /platform/android/build
 /platform/android/MapboxGLAndroidSDK/src/main/assets/sdk_versions/com.mapbox.mapboxsdk
 /platform/ios/platform/ios/Mapbox.playground/build/

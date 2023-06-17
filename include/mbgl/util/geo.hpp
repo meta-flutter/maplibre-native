@@ -115,7 +115,6 @@ public:
     LatLngBounds(const CanonicalTileID&);
 
     bool valid() const { return (sw.latitude() <= ne.latitude()) && (sw.longitude() <= ne.longitude()); }
-
     double south() const { return sw.latitude(); }
     double west() const { return sw.longitude(); }
     double north() const { return ne.latitude(); }
